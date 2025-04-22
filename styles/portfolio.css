@@ -1,0 +1,22 @@
+.portfolio-items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.portfolio-item {
+    width: 32%;
+    background: #002a51; /* Darker blue for portfolio items */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff; /* White headings */
+}
+
+.portfolio-item p {
+    color: #e0e0e0; /* Light gray text */
+}

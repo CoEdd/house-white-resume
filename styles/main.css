@@ -1,0 +1,68 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to bottom, #003366, #002a51); /* Blue background */
+    color: #ffffff; /* White text for contrast */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+section {
+    padding: 50px 0;
+}
+
+section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff; /* White headings */
+}
+
+p {
+    color: #e0e0e0; /* Light gray text for paragraphs */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff; /* White labels */
+}
+
+form input,
+form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    background-color: #ffffff; /* White background for form inputs */
+    color: #333333; /* Dark text for form inputs */
+}
+
+form button {
+    padding: 10px;
+    background: #ffffff; /* White button */
+    color: #003366; /* Blue text for button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #cccccc; /* Light gray hover effect */
+}

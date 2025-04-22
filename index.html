@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dr. Wong</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/hero.css" />
+    <link rel="stylesheet" href="styles/about.css" />
+    <link rel="stylesheet" href="styles/portfolio.css" />
+    <link rel="stylesheet" href="styles/contact.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Hero Section -->
+    <div id="hero"></div>
+
+    <!-- About Section -->
+    <div id="about"></div>
+
+    <!-- Portfolio Section -->
+    <div id="portfolio"></div>
+
+    <!-- Contact Section -->
+    <div id="contact"></div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+        // Function to load HTML components
+        async function loadComponent(componentId, filePath, callback) {
+            try {
+                const response = await fetch(filePath);
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${filePath}: ${response.statusText}`);
+                }
+                const text = await response.text();
+                document.getElementById(componentId).innerHTML = text;
+                if (callback) callback(); // Run callback after inserting HTML
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        // Load components (only about section needs callback)
+        loadComponent('header', 'components/header.html');
+        loadComponent('hero', 'components/hero.html');
+        loadComponent('about', 'components/about.html', initModalScript); // Add callback here
+        loadComponent('portfolio', 'components/portfolio.html');
+        loadComponent('contact', 'components/contact.html');
+        loadComponent('footer', 'components/footer.html');
+
+        // Function to init modal behavior after loading about.html
+        function initModalScript() {
+            const modal = document.getElementById('bio-modal');
+            const btn = document.getElementById('read-more-btn');
+            const span = document.querySelector('.close');
+
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    if (modal) modal.style.display = 'block';
+                });
+            }
+
+            if (span) {
+                span.addEventListener('click', () => {
+                    if (modal) modal.style.display = 'none';
+                });
+            }
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            window.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

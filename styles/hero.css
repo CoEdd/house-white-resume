@@ -1,0 +1,62 @@
+/* Hero Section */
+#hero {
+    color: #ffffff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+#hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items vertically */
+    gap: 20px; /* Space between photo and content */
+}
+
+/* Professional Photo */
+.hero-photo img {
+    width: 150px; /* Adjust size of the photo */
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Hero Content */
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.hero-content .title {
+    font-size: 18px;
+    color: #e0e0e0; /* Light gray for secondary text */
+    margin-bottom: 10px;
+}
+
+.hero-content .research-interests {
+    font-size: 16px;
+    color: #cccccc; /* Lighter gray for tertiary text */
+    margin-bottom: 20px;
+}
+
+/* Call-to-Action Buttons */
+.cta-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 15px; /* Space between buttons */
+}
+
+.cta-buttons .btn {
+    padding: 10px 20px;
+    background: #ffffff; /* White background */
+    color: #003366; /* Blue text */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.cta-buttons .btn:hover {
+    background: #cccccc; /* Light gray on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
